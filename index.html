@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peer Support Circles | Georgia Tech</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #007B8F; /* Teal */
-      --secondary: #005B6B; /* Dark Teal */
-      --accent: #FF8C00; /* Darker Orange for better contrast */
-      --neutral: #F5F5DC; /* Beige */
+      --primary: #007B8F;
+      --secondary: #005B6B;
+      --accent: #FF8C00;
+      --neutral: #F5F5DC;
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Lato', sans-serif;
     }
@@ -22,7 +21,7 @@
     nav a { color: white; margin: 0 0.75rem; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
     nav a:hover { color: var(--accent); }
     section { padding: 3rem 1.5rem; max-width: 900px; margin: auto; text-align: center; }
-    h2 { font-family: var(--font-heading); color: var(--secondary); margin-bottom: 1rem; font-size: 2rem; }
+    h2 { font-family: var(--font-heading); color: var(--secondary); margin-bottom: 1rem; font-size: 2rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
     p { margin-bottom: 1.2rem; }
     .highlight { color: var(--accent); font-weight: bold; }
     .embed-poster img { width: 100%; max-width: 650px; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease; }
@@ -30,7 +29,8 @@
     .cta { background: var(--accent); color: white; padding: 1rem 2rem; font-size: 1.2rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 1rem; display: inline-block; text-decoration: none; transition: opacity 0.3s ease; }
     .cta:hover { opacity: 0.85; }
     ul { list-style: none; padding: 0; }
-    ul li { margin-bottom: 0.8rem; font-weight: 500; }
+    ul li { margin-bottom: 0.8rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+    ul li::before { content: '✔'; color: var(--accent); font-size: 1.2rem; }
     form { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.1); text-align: left; margin-top: 2rem; }
     form .form-group { margin-bottom: 1rem; }
     form label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
@@ -38,6 +38,7 @@
     form button { background: var(--accent); color: white; border: none; padding: 0.9rem 1.5rem; font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; }
     form button:hover { opacity: 0.9; }
     .testimonial { font-style: italic; background: #fff8e6; border-left: 4px solid var(--accent); padding: 1rem; margin: 2rem 0; border-radius: 6px; }
+    .feature-img { width: 100%; max-width: 700px; border-radius: 8px; margin: 1rem auto; display: block; }
     footer { background: var(--secondary); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.9rem; }
     footer a { color: var(--accent); text-decoration: none; font-weight: bold; }
     html { scroll-behavior: smooth; }
@@ -56,20 +57,21 @@
   </header>
 
   <section id="overview">
-    <h2>Addressing Mental Health on Campus</h2>
+    <h2>📘 Addressing Mental Health</h2>
     <p>Georgia Tech students face intense academic pressure, isolation, and burnout. While counseling exists, many hesitate to seek help due to stigma or lack of awareness. Peer Support Circles create welcoming spaces where students can share, connect, and feel supported.</p>
+    <img src="community.jpg" alt="Students sitting in a circle talking" class="feature-img">
     <div class="testimonial">“I didn’t know how much I needed to talk until I joined. It’s like finding people who truly get it.” – GT Student</div>
   </section>
 
   <section id="poster">
-    <h2>Our Poster</h2>
+    <h2>🖼 Our Poster</h2>
     <div class="embed-poster">
       <img src="poster.png" alt="Peer Support Circle Poster" onclick="window.open(this.src,'_blank');">
     </div>
   </section>
 
   <section id="details">
-    <h2>How It Works</h2>
+    <h2>📅 How It Works</h2>
     <p>Biweekly sessions start in September 2025 at West Village Lounge, Clough Commons, and the Student Center. Trained peer leaders guide discussions so everyone feels welcome and comfortable. </p>
     <p>Monthly, anonymous stories will be shared across campus to help normalize mental health conversations and inspire empathy.</p>
     <ul>
@@ -77,11 +79,12 @@
       <li>Combat <span class="highlight">isolation</span> with community connections</li>
       <li>Empower students with <span class="highlight">shared understanding</span></li>
     </ul>
+    <img src="discussion.jpg" alt="Peer discussion group at GT" class="feature-img">
     <a class="cta" href="#survey">Join & Share Your Voice</a>
   </section>
 
   <section id="survey">
-    <h2>Gauge Your Interest</h2>
+    <h2>📝 Gauge Your Interest</h2>
     <p>Help us make these circles fit your schedule and needs by filling out this quick survey.</p>
     <form id="interestForm">
       <div class="form-group">
@@ -102,7 +105,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="topics">What topics interest you most? (Stress, Homesickness, Academic Pressure, etc.)</label>
+        <label for="topics">What topics interest you most?</label>
         <textarea id="topics" name="topics" rows="3" placeholder="Your thoughts..."></textarea>
       </div>
       <div class="form-group">
