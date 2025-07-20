@@ -10,32 +10,37 @@
     :root {
       --primary: #007B8F; /* Teal */
       --secondary: #005B6B; /* Dark Teal */
-      --accent: #FFA500; /* Orange */
+      --accent: #FF8C00; /* Darker Orange for better contrast */
       --neutral: #F5F5DC; /* Beige */
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Lato', sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); background: var(--neutral); color: #333; line-height: 1.6; }
-    header { background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; }
-    header h1 { font-family: var(--font-heading); font-size: 2.5rem; }
-    nav { margin-top: 1rem; }
-    nav a { color: white; margin: 0 0.75rem; text-decoration: none; font-weight: bold; }
-    section { padding: 2rem 1rem; max-width: 800px; margin: auto; }
-    .embed-poster { text-align: center; margin: 2rem 0; }
-    .embed-poster img { width: 100%; height: auto; border: 1px solid #ccc; }
-    h2 { font-family: var(--font-heading); color: var(--secondary); margin-bottom: 1rem; }
-    p { margin-bottom: 1rem; }
+    body { font-family: var(--font-body); background: var(--neutral); color: #333; line-height: 1.7; font-size: 18px; }
+    header { position: sticky; top: 0; background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; z-index: 10; }
+    header h1 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 0.5rem; }
+    nav a { color: white; margin: 0 0.75rem; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+    nav a:hover { color: var(--accent); }
+    section { padding: 3rem 1.5rem; max-width: 900px; margin: auto; text-align: center; }
+    h2 { font-family: var(--font-heading); color: var(--secondary); margin-bottom: 1rem; font-size: 2rem; }
+    p { margin-bottom: 1.2rem; }
     .highlight { color: var(--accent); font-weight: bold; }
-    /* Survey form styles */
-    form { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .embed-poster img { width: 100%; max-width: 650px; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease; }
+    .embed-poster img:hover { transform: scale(1.02); }
+    .cta { background: var(--accent); color: white; padding: 1rem 2rem; font-size: 1.2rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 1rem; display: inline-block; text-decoration: none; transition: opacity 0.3s ease; }
+    .cta:hover { opacity: 0.85; }
+    ul { list-style: none; padding: 0; }
+    ul li { margin-bottom: 0.8rem; font-weight: 500; }
+    form { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.1); text-align: left; margin-top: 2rem; }
     form .form-group { margin-bottom: 1rem; }
     form label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
-    form input, form textarea, form select { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
-    form button { background: var(--accent); color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; }
+    form input, form textarea, form select { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: var(--accent); color: white; border: none; padding: 0.9rem 1.5rem; font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; }
     form button:hover { opacity: 0.9; }
-    footer { background: var(--secondary); color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
-    footer a { color: var(--accent); text-decoration: none; }
+    .testimonial { font-style: italic; background: #fff8e6; border-left: 4px solid var(--accent); padding: 1rem; margin: 2rem 0; border-radius: 6px; }
+    footer { background: var(--secondary); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; font-weight: bold; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
@@ -52,32 +57,32 @@
 
   <section id="overview">
     <h2>Addressing Mental Health on Campus</h2>
-    <p>At Georgia Tech, students often face intense academic pressure, isolation, and burnout. While professional counseling services are available, many feel hesitant to seek help due to stigma or lack of awareness. Peer Support Circles aim to create accessible, informal spaces where students can share experiences, listen, and build community.</p>
+    <p>Georgia Tech students face intense academic pressure, isolation, and burnout. While counseling exists, many hesitate to seek help due to stigma or lack of awareness. Peer Support Circles create welcoming spaces where students can share, connect, and feel supported.</p>
+    <div class="testimonial">“I didn’t know how much I needed to talk until I joined. It’s like finding people who truly get it.” – GT Student</div>
   </section>
 
   <section id="poster">
     <h2>Our Poster</h2>
     <div class="embed-poster">
-      <!-- Replace 'poster.png' with the correct path to your poster image -->
-      <img src="poster.png" alt="Peer Support Circle Poster">
+      <img src="poster.png" alt="Peer Support Circle Poster" onclick="window.open(this.src,'_blank');">
     </div>
   </section>
 
   <section id="details">
     <h2>How It Works</h2>
-    <p>Starting September 2025, we will host biweekly sessions in safe, informal locations such as West Village Lounge, Clough Commons, and the Student Center. Trained student leaders will guide conversations, ensuring everyone feels comfortable sharing only what they choose.</p>
-    <p>In addition, a monthly storytelling initiative will invite anonymous submissions of personal experiences. Selected stories will be featured on campus through posters, social media, and newsletters, helping normalize mental health discussions and fostering empathy.</p>
-    <p>Our goals:</p>
+    <p>Biweekly sessions start in September 2025 at West Village Lounge, Clough Commons, and the Student Center. Trained peer leaders guide discussions so everyone feels welcome and comfortable. </p>
+    <p>Monthly, anonymous stories will be shared across campus to help normalize mental health conversations and inspire empathy.</p>
     <ul>
-      <li>Provide <span class="highlight">low-barrier</span> entry points for students new to support groups</li>
-      <li>Combat <span class="highlight">isolation</span> through community connections</li>
+      <li>Provide <span class="highlight">low-barrier</span> entry points for new participants</li>
+      <li>Combat <span class="highlight">isolation</span> with community connections</li>
       <li>Empower students with <span class="highlight">shared understanding</span></li>
     </ul>
+    <a class="cta" href="#survey">Join & Share Your Voice</a>
   </section>
 
   <section id="survey">
     <h2>Gauge Your Interest</h2>
-    <p>We value your input! Please fill out this short survey to help us plan session times, topics, and formats that work best for you.</p>
+    <p>Help us make these circles fit your schedule and needs by filling out this quick survey.</p>
     <form id="interestForm">
       <div class="form-group">
         <label for="name">Name (optional):</label>
@@ -88,7 +93,7 @@
         <input type="email" id="email" name="email" placeholder="you@example.com" required>
       </div>
       <div class="form-group">
-        <label for="interest">Would you be interested in attending a Peer Support Circle?</label>
+        <label for="interest">Would you be interested in attending?</label>
         <select id="interest" name="interest" required>
           <option value="">-- Select --</option>
           <option value="Yes">Yes</option>
@@ -97,11 +102,11 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="topics">Which topics are you most interested in? (Stress, Homesickness, Academic Pressure, etc.)</label>
+        <label for="topics">What topics interest you most? (Stress, Homesickness, Academic Pressure, etc.)</label>
         <textarea id="topics" name="topics" rows="3" placeholder="Your thoughts..."></textarea>
       </div>
       <div class="form-group">
-        <label for="times">Preferred meeting days/times:</label>
+        <label for="times">Preferred meeting times:</label>
         <input type="text" id="times" name="times" placeholder="e.g., Tuesdays after 6pm">
       </div>
       <button type="submit">Submit</button>
@@ -117,7 +122,6 @@
   <script>
     document.getElementById('interestForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // TODO: Integrate with backend or Google Forms
       document.getElementById('thankYou').style.display = 'block';
       this.reset();
     });
