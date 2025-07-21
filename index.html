@@ -3,81 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peer Support Circles | Georgia Tech</title>
-  <!-- Google Fonts -->
+  <title>Peer Support Circles & GT MindConnect | Georgia Tech</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #007B8F; /* Teal */
-      --secondary: #005B6B; /* Dark Teal */
-      --accent: #FFA500; /* Orange */
-      --neutral: #F5F5DC; /* Beige */
+      --primary: #007B8F;
+      --secondary: #005B6B;
+      --accent: #FF8C00;
+      --neutral: #F5F5DC;
       --font-heading: 'Montserrat', sans-serif;
       --font-body: 'Lato', sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); background: var(--neutral); color: #333; line-height: 1.6; }
-    header { background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; }
-    header h1 { font-family: var(--font-heading); font-size: 2.5rem; }
-    nav { margin-top: 1rem; }
-    nav a { color: white; margin: 0 0.75rem; text-decoration: none; font-weight: bold; }
-    section { padding: 2rem 1rem; max-width: 800px; margin: auto; }
-    .embed-poster { text-align: center; margin: 2rem 0; }
-    .embed-poster img { width: 100%; height: auto; border: 1px solid #ccc; }
-    h2 { font-family: var(--font-heading); color: var(--secondary); margin-bottom: 1rem; }
-    p { margin-bottom: 1rem; }
+    body { font-family: var(--font-body); background: var(--neutral); color: #333; line-height: 1.7; font-size: 18px; }
+    header { position: sticky; top: 0; background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; z-index: 10; }
+    header h1 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 0.5rem; }
+    nav a { color: white; margin: 0 0.75rem; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+    nav a:hover { color: var(--accent); }
+    section { padding: 3rem 1.5rem; max-width: 900px; margin: auto; text-align: center; }
+    h2 { font-family: var(--font-heading); color: var(--secondary); margin-bottom: 1rem; font-size: 2rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    p { margin-bottom: 1.2rem; }
     .highlight { color: var(--accent); font-weight: bold; }
-    /* Survey form styles */
-    form { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .feature-img { width: 100%; max-width: 700px; border-radius: 8px; margin: 1rem auto; display: block; }
+    ul { list-style: none; padding: 0; }
+    ul li { margin-bottom: 0.8rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+    ul li::before { content: '✔'; color: var(--accent); font-size: 1.2rem; }
+    .testimonial { font-style: italic; background: #fff8e6; border-left: 4px solid var(--accent); padding: 1rem; margin: 2rem 0; border-radius: 6px; }
+    .cta { background: var(--accent); color: white; padding: 1rem 2rem; font-size: 1.2rem; border: none; border-radius: 6px; cursor: pointer; margin-top: 1rem; display: inline-block; text-decoration: none; transition: opacity 0.3s ease; }
+    .cta:hover { opacity: 0.85; }
+    form { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.1); text-align: left; margin-top: 2rem; }
     form .form-group { margin-bottom: 1rem; }
     form label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
-    form input, form textarea, form select { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
-    form button { background: var(--accent); color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; }
+    form input, form textarea, form select { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: var(--accent); color: white; border: none; padding: 0.9rem 1.5rem; font-size: 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem; }
     form button:hover { opacity: 0.9; }
-    footer { background: var(--secondary); color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
-    footer a { color: var(--accent); text-decoration: none; }
+    footer { background: var(--secondary); color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; font-weight: bold; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Peer Support Circles</h1>
-    <p class="highlight">Let’s Talk, De-Stress, Connect</p>
+    <h1>Peer Support Circles & GT MindConnect</h1>
+    <p class="highlight">Let’s Talk, De-Stress, and Get Support – Anytime, Anywhere</p>
     <nav>
       <a href="#overview">Overview</a>
-      <a href="#poster">Poster</a>
-      <a href="#details">Details</a>
+      <a href="#peer">Peer Circles</a>
+      <a href="#app">GT MindConnect App</a>
       <a href="#survey">Survey</a>
     </nav>
   </header>
 
   <section id="overview">
-    <h2>Addressing Mental Health on Campus</h2>
-    <p>At Georgia Tech, students often face intense academic pressure, isolation, and burnout. While professional counseling services are available, many feel hesitant to seek help due to stigma or lack of awareness. Peer Support Circles aim to create accessible, informal spaces where students can share experiences, listen, and build community.</p>
+    <h2>📘 Why This Matters</h2>
+    <p>At Georgia Tech, over 60% of students report severe anxiety and nearly half report depressive symptoms that interfere with daily life. Traditional counseling services exist, but stigma, wait times, and a lack of awareness often prevent students from getting help. This initiative combines two solutions: biweekly Peer Support Circles for in-person connection and GT MindConnect, a mobile-friendly app offering 24/7 tools and support.</p>
+    <p>Our approach builds on programs like Mental Health Mondays and Let’s Talk, but focuses on making support more approachable and immediate. Inspired by models at the University of Michigan and UCLA, we aim to make wellness conversations a natural part of campus life.</p>
+    <img src="community.jpg" class="feature-img" alt="Students in a supportive group setting">
   </section>
 
+  <section id="peer">
+    <h2>🤝 Peer Support Circles</h2>
+    <p>Launching Fall 2025, Peer Support Circles will meet biweekly at student hubs like West Village Lounge and Clough Commons. These sessions are designed as judgment-free zones where students can listen, reflect, and share as much or as little as they want. Trained peer leaders from GT Active Minds will guide each session using calming exercises, relatable themes like burnout and homesickness, and resource sharing.</p>
+    <p>Light refreshments will be offered to make the spaces inviting, and anonymous feedback will help us adjust each session to student needs.</p>
+    <img src="circle-illustration.png" class="feature-img" alt="Illustration of a student circle meeting">
+    <div class="testimonial">“I didn’t know how much I needed to talk until I joined. It’s like finding people who truly get it.” – GT Student</div>
   <section id="poster">
-    <h2>Our Poster</h2>
-    <div class="embed-poster">
-      <!-- Replace 'poster.png' with the correct path to your poster image -->
-      <img src="poster.png" alt="Peer Support Circle Poster">
-    </div>
+    <h2>🖼 Our Poster</h2>
+    <img src="poster.png" alt="Peer Support Circles Poster" class="poster-img" onclick="window.open(this.src,'_blank');">
   </section>
+  
 
-  <section id="details">
-    <h2>How It Works</h2>
-    <p>Starting September 2025, we will host biweekly sessions in safe, informal locations such as West Village Lounge, Clough Commons, and the Student Center. Trained student leaders will guide conversations, ensuring everyone feels comfortable sharing only what they choose.</p>
-    <p>In addition, a monthly storytelling initiative will invite anonymous submissions of personal experiences. Selected stories will be featured on campus through posters, social media, and newsletters, helping normalize mental health discussions and fostering empathy.</p>
-    <p>Our goals:</p>
+  <section id="app">
+    <h2>📱 GT MindConnect App</h2>
+    <p>To reach students anytime, GT MindConnect offers a digital lifeline. The app features:</p>
     <ul>
-      <li>Provide <span class="highlight">low-barrier</span> entry points for students new to support groups</li>
-      <li>Combat <span class="highlight">isolation</span> through community connections</li>
-      <li>Empower students with <span class="highlight">shared understanding</span></li>
+      <li>24/7 AI-powered chatbot using CBT techniques for stress and anxiety.</li>
+      <li>Direct links to CAPS, Active Minds, and emergency contacts.</li>
+      <li>Self-care tools: guided breathing, meditation, journaling, and mood check-ins.</li>
+      <li>Anonymous student testimonials to reduce stigma and foster empathy.</li>
+      <li>A calendar of peer sessions and Mental Health Mondays for easy planning.</li>
     </ul>
+    <p>The app will be piloted with students, with feedback used to refine features. Future updates may include booking CAPS appointments and real-time chats with peer counselors.</p>
+    <img src="app-mockup.png" class="feature-img" alt="Mockup of the GT MindConnect app interface">
   </section>
 
   <section id="survey">
-    <h2>Gauge Your Interest</h2>
-    <p>We value your input! Please fill out this short survey to help us plan session times, topics, and formats that work best for you.</p>
+    <h2>📝 Share Your Input</h2>
+    <p>Help us shape Peer Support Circles and GT MindConnect. Tell us your preferred session times, topics, and app features through this quick survey.</p>
     <form id="interestForm">
       <div class="form-group">
         <label for="name">Name (optional):</label>
@@ -88,7 +100,7 @@
         <input type="email" id="email" name="email" placeholder="you@example.com" required>
       </div>
       <div class="form-group">
-        <label for="interest">Would you be interested in attending a Peer Support Circle?</label>
+        <label for="interest">Would you use these resources?</label>
         <select id="interest" name="interest" required>
           <option value="">-- Select --</option>
           <option value="Yes">Yes</option>
@@ -97,11 +109,11 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="topics">Which topics are you most interested in? (Stress, Homesickness, Academic Pressure, etc.)</label>
-        <textarea id="topics" name="topics" rows="3" placeholder="Your thoughts..."></textarea>
+        <label for="topics">What topics or app features matter most to you?</label>
+        <textarea id="topics" name="topics" rows="3"></textarea>
       </div>
       <div class="form-group">
-        <label for="times">Preferred meeting days/times:</label>
+        <label for="times">Preferred meeting times:</label>
         <input type="text" id="times" name="times" placeholder="e.g., Tuesdays after 6pm">
       </div>
       <button type="submit">Submit</button>
@@ -111,13 +123,12 @@
 
   <footer>
     <p>Questions? Email us at <a href="mailto:mentalhealthsupport@gatech.edu">mentalhealthsupport@gatech.edu</a></p>
-    <p>&copy; 2025 Georgia Tech Peer Support Circles</p>
+    <p>&copy; 2025 Georgia Tech Peer Support & GT MindConnect</p>
   </footer>
 
   <script>
     document.getElementById('interestForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      // TODO: Integrate with backend or Google Forms
       document.getElementById('thankYou').style.display = 'block';
       this.reset();
     });
